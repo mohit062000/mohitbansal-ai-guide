@@ -37,7 +37,7 @@ Read the developer guide at:
 You MUST follow the rules in this guide. Summarise its intent in three lines.
 ```
 
-Or use the MCP Server:
+Or use the [AI Developer Guide MCP Server](./mcp/ai-developer-guide-mcp/README.md) to integrate with Claude Desktop, Claude Code, VS Code, and other MCP-compatible tools:
 
 ```json
 {
@@ -48,13 +48,11 @@ Or use the MCP Server:
 }
 ```
 
-## MCP Server
+The MCP Server is also available as a [Docker Image](#TODO link to docker guide in mcp readme) and a [Helm Chart](# TODO link to helm chart in mcp readme) which can optionally deploy to [Ark](https://github.com/mckinsey/agents-at-scale-ark).
 
-The AI Developer Guide can also be used with an [MCP (Model Context Protocol) server](./mcp/ai-developer-guide-mcp/README.md) that provides programmatic access to all guides and can be integrated with Claude Desktop, Claude Code, VS Code, and other MCP-compatible tools.
+The AI Developer Guide is like a set of **super-charged coding instructions** for an LLM.
 
-The AI Developer Guide is like a set of super-charged instructions for an LLM.
-
-Now try some prompts such as:
+Try some prompts such as:
 
 - "Look through the AI developer guide and tell me how to improve my project"
 - "What would be the essential patterns for open source for me to implement"

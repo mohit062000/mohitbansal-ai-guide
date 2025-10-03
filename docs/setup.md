@@ -7,6 +7,11 @@ This page describes how to set up specific tools and editors, as well as how to 
 - [Tools](#tools)
     - [Visual Studio Code](#visual-studio-code)
     - [Cursor](#cursor)
+        - [1. (Easiest) Just Reference the Guide in Your README.md](#1-easiest-just-reference-the-guide-in-your-readmemd)
+        - [2. Reinforce with Inline Prompts in Chat](#2-reinforce-with-inline-prompts-in-chat)
+        - [3. Optional: Add a Dev Guide Summary as a Code Comment](#3-optional-add-a-dev-guide-summary-as-a-code-comment)
+        - [4. Add the full Guide to Your Project Repo](#4-add-the-full-guide-to-your-project-repo)
+        - [5. Use Cursor's 'Rules' feature (related: 'Memories')](#5-use-cursors-rules-feature-related-memories)
     - [Claude Code](#claude-code)
     - [Claude Desktop](#claude-desktop)
 - [MCP](#mcp)
@@ -152,19 +157,6 @@ You can use the `@dwmkerr/ai-developer-guide` MCP server to integrate your LLM t
 }
 ```
 
-**Docker**: Run with `docker run -p 8080:8080 ghcr.io/dwmkerr/ai-developer-guide-mcp:latest`
-
-**Helm**: Deploy to Kubernetes:
-
-```bash
-# Install from GHCR
-helm upgrade --install ai-developer-guide oci://ghcr.io/dwmkerr/charts/ai-developer-guide-mcp
-
-# With Ark platform support
-helm upgrade --install ai-developer-guide oci://ghcr.io/dwmkerr/charts/ai-developer-guide-mcp \
-  --set mcpServer.create=true
-```
-
 Configuration:
 
 | Parameter    | Usage                                                                    |
@@ -172,6 +164,24 @@ Configuration:
 | `--base-url` | Use a custom location for the developer guide, such as your own version. |
 
 For details on how to build the server locally, debug, extend, check the [MCP Server README](../mcp/ai-developer-guide-mcp/README.md).
+
+Run as a Docker container:
+
+```bash
+docker run -p 8080:8080 ghcr.io/dwmkerr/ai-developer-guide-mcp:latest
+# todo comment the mcp/sse url below.
+```
+
+Deploy to Kubernetes:
+
+```bash
+# Install from GHCR, optionally creating the Ark MCP server resource type.
+helm upgrade --install ai-developer-guide oci://ghcr.io/dwmkerr/charts/ai-developer-guide-mcp \
+  --set mcpServer.create=true
+
+# The MCP Server will be available in Ark:
+kubectl get mcpserver
+```
 
 ## Extending the Guide or Project Specific Guides
 
