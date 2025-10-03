@@ -152,6 +152,19 @@ You can use the `@dwmkerr/ai-developer-guide` MCP server to integrate your LLM t
 }
 ```
 
+**Docker**: Run with `docker run -p 8080:8080 ghcr.io/dwmkerr/ai-developer-guide-mcp:latest`
+
+**Helm**: Deploy to Kubernetes:
+
+```bash
+# Install from GHCR
+helm upgrade --install ai-developer-guide oci://ghcr.io/dwmkerr/charts/ai-developer-guide-mcp
+
+# With Ark platform support
+helm upgrade --install ai-developer-guide oci://ghcr.io/dwmkerr/charts/ai-developer-guide-mcp \
+  --set mcpServer.create=true
+```
+
 Configuration:
 
 | Parameter    | Usage                                                                    |
