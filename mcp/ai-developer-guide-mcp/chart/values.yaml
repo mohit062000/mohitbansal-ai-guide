@@ -70,4 +70,3 @@ mcpServer:
   create: false
   name: "ai-developer-guide"
   description: "AI Developer Guide - provides access to development best practices and patterns"
-  path: "/mcp"
