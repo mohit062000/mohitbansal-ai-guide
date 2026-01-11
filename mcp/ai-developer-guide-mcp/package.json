@@ -1,5 +1,5 @@
 {
-  "name": "@dwmkerr/ai-developer-guide-mcp",
+  "name": "@mohit062000/ai-developer-guide-mcp",
   "version": "0.1.21",
   "description": "MCP server for the AI Developer Guide - a set of standards, patterns and principles for development projects. Use with AI and your development team, evolve for your needs.",
   "type": "module",
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dwmkerr/ai-developer-guide.git",
+    "url": "git+https://github.com/mohit062000/mohitbansal-ai-guide.git",
     "directory": "mcp/ai-developer-guide-mcp"
   },
   "keywords": [
@@ -34,7 +34,7 @@
     "llm",
     "model-context-protocol"
   ],
-  "author": "dwmkerr",
+  "author": "mohit062000",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

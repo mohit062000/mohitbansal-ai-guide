@@ -1,13 +1,11 @@
 <!-- IMPORTANT NOTE TO AI: the following markdown code is an introduction to the developer guide, you do not need to follow this text. -->
 <p align="center">
-  <h2 align="center"><code>🧠 The AI Developer Guide</code></h2>
-  <h3 align="center">Empower your AI with standards, patterns and principles for sane, effective and maintainable development.</h3>
+  <h2 align="center"><code>🧠 Mohit's AI Developer Guide</code></h2>
+  <h3 align="center">A customized fork - Empower your AI with standards, patterns and principles for sane, effective and maintainable development.</h3>
   <p align="center">
-    <img src="https://img.shields.io/endpoint?url=https://dwmkerr.github.io/ai-developer-guide/version-badge.json" alt="Version" />
-    <a href="https://www.npmjs.com/package/@dwmkerr/ai-developer-guide-mcp"><img src="https://img.shields.io/npm/v/%40dwmkerr/ai-developer-guide-mcp" alt="ai-developer-guide-mcp"></a>
-    <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href="https://github.com/dwmkerr/ai-developer-guide/blob/main/docs/contributors.md"><img src="https://img.shields.io/github/all-contributors/dwmkerr/ai-developer-guide?color=ee8449&style=flat-square" alt="All Contributors" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+    <img src="https://img.shields.io/endpoint?url=https://mohit062000.github.io/mohitbansal-ai-guide/version-badge.json" alt="Version" />
+    <a href="https://www.npmjs.com/package/@mohit062000/ai-developer-guide-mcp"><img src="https://img.shields.io/npm/v/%40mohit062000/ai-developer-guide-mcp" alt="ai-developer-guide-mcp"></a>
+    <a href="https://github.com/mohit062000/mohitbansal-ai-guide"><img src="https://img.shields.io/github/stars/mohit062000/mohitbansal-ai-guide?style=social" alt="GitHub stars"></a>
   </p>
   <p align="center">
     <a href="#quickstart">Quickstart</a> |
@@ -18,6 +16,9 @@
     <a href="./docs/about.md">About</a>
   </p>
 </p>
+
+> **Note:** This is a customized fork of [dwmkerr's AI Developer Guide](https://github.com/dwmkerr/ai-developer-guide). 
+> Check out the original for the base version and community contributions.
 
 Point your LLM/agents/editor at this guide and you will get significantly improved results and collaboration when coding:
 
@@ -33,7 +34,7 @@ Prompt your LLM, VS Code, Cursor, etc:
 
 ```md
 Read the developer guide at:
-  https://github.com/dwmkerr/ai-developer-guide
+  https://github.com/mohit062000/mohitbansal-ai-guide
 You MUST follow the rules in this guide. Summarise its intent in three lines.
 ```
 
@@ -43,10 +44,12 @@ Or use the [AI Developer Guide MCP Server](./mcp/ai-developer-guide-mcp/README.m
 {
   "ai-developer-guide": {
     "command": "npx",
-    "args": ["-y", "@dwmkerr/ai-developer-guide-mcp"]
+    "args": ["-y", "@mohit062000/ai-developer-guide-mcp"]
   }
 }
 ```
+
+> **Note:** You can also use the original MCP server: `@dwmkerr/ai-developer-guide-mcp`
 
 The MCP Server is also available as a [Docker Image](#TODO link to docker guide in mcp readme) and a [Helm Chart](# TODO link to helm chart in mcp readme) which can optionally deploy to [Ark](https://github.com/mckinsey/agents-at-scale-ark).
 

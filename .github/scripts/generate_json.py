@@ -394,7 +394,7 @@ def create_index_html(output_dir, generated_guides, project_dir):
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="{repo_info['full_url']}">
-                🧠 AI Developer Guide API
+                🧠 Mohit's AI Developer Guide
             </a>
             <div class="d-flex align-items-center">
                 <span class="navbar-text me-3">
@@ -413,8 +413,8 @@ def create_index_html(output_dir, generated_guides, project_dir):
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-lg-10 content-wrapper">
-                <h1>AI Developer Guide API</h1>
-                <p class="lead">JSON API providing standards, patterns and principles for effective AI-assisted development. This API is used by the MCP server to connect LLMs to the guide.</p>
+                <h1>Mohit's AI Developer Guide API</h1>
+                <p class="lead">A customized fork of the AI Developer Guide - JSON API providing standards, patterns and principles for effective AI-assisted development.</p>
                 
                 <div class="alert alert-primary">
                     <h5><i class="bi bi-rocket-takeoff"></i> Quickstart</h5>
@@ -424,14 +424,14 @@ def create_index_html(output_dir, generated_guides, project_dir):
   "mcpServers": {{
     "ai-developer-guide": {{
       "command": "npx",
-      "args": ["@dwmkerr/ai-developer-guide-mcp"]
+      "args": ["@mohit062000/ai-developer-guide-mcp"]
     }}
   }}
 }}</code></pre>
                     </div>
                     <p class="mt-3 mb-2">
-                        <strong>💡 Note:</strong> This uses the original MCP server which works with any AI Developer Guide site. 
-                        The server automatically fetches content from this GitHub Pages deployment.
+                        <strong>💡 Note:</strong> This is a customized fork of the AI Developer Guide. 
+                        You can also use the original: <code>@dwmkerr/ai-developer-guide-mcp</code>
                     </p>
                     <p class="mt-2 mb-2">
                         <a href="{repo_info['full_url']}/tree/main/mcp" class="alert-link">
@@ -442,7 +442,7 @@ def create_index_html(output_dir, generated_guides, project_dir):
                     
                     <div class="mt-3 p-2 bg-light rounded">
                         <small class="text-muted"><strong>Test with MCP Inspector:</strong></small><br>
-                        <code class="small">npx @modelcontextprotocol/inspector npx @dwmkerr/ai-developer-guide-mcp</code>
+                        <code class="small">npx @modelcontextprotocol/inspector npx @mohit062000/ai-developer-guide-mcp</code>
                     </div>
                 </div>
 
