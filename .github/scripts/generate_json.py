@@ -21,6 +21,47 @@ def read_version(project_dir):
         print(f"Warning: Could not read version from {version_file}: {e}")
         return "0.1.0"  # fallback version
 
+def get_repo_info(project_dir):
+    """
+    Extract repository information from git config or use defaults.
+    
+    Returns:
+        Dictionary with owner, repo, and full_url
+    """
+    try:
+        # Try to get remote URL from git
+        import subprocess
+        result = subprocess.run(
+            ['git', 'config', '--get', 'remote.origin.url'],
+            cwd=project_dir,
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        
+        if result.returncode == 0:
+            url = result.stdout.strip()
+            # Parse GitHub URL (handles both HTTPS and SSH)
+            # https://github.com/owner/repo.git or git@github.com:owner/repo.git
+            match = re.search(r'github\.com[:/]([^/]+)/([^/\.]+)', url)
+            if match:
+                owner = match.group(1)
+                repo = match.group(2)
+                return {
+                    'owner': owner,
+                    'repo': repo,
+                    'full_url': f'https://github.com/{owner}/{repo}'
+                }
+    except Exception as e:
+        print(f"Warning: Could not detect git repository: {e}")
+    
+    # Fallback to defaults
+    return {
+        'owner': 'dwmkerr',
+        'repo': 'ai-developer-guide',
+        'full_url': 'https://github.com/dwmkerr/ai-developer-guide'
+    }
+
 def extract_references(content, base_url="api/guides"):
     """
     Extract references to specialized guides and add API URLs.
@@ -99,6 +140,10 @@ def create_guide_json(readme_path, output_dir):
     guides_dir = os.path.join(project_dir, "guides")
     print(f"Looking for guides in: {guides_dir}")
     
+    # Get repository information
+    repo_info = get_repo_info(project_dir)
+    print(f"Repository: {repo_info['full_url']}")
+    
     # Ensure output directories exist
     api_dir = os.path.join(output_dir, "api")
     api_guides_dir = os.path.join(api_dir, "guides")
@@ -160,7 +205,7 @@ def create_guide_json(readme_path, output_dir):
                     "type": guide_type,
                     "version": read_version(project_dir),
                     "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
-                    "source": f"https://github.com/dwmkerr/ai-developer-guide/{relative_guide_path}"
+                    "source": f"{repo_info['full_url']}/{relative_guide_path}"
                 },
                 "content": guide_data["content"]
             }
@@ -183,7 +228,7 @@ def create_guide_json(readme_path, output_dir):
             "name": "AI Developer Guide",
             "version": read_version(project_dir),
             "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
-            "source": "https://github.com/dwmkerr/ai-developer-guide"
+            "source": repo_info['full_url']
         },
         "content": guide_content,
         "references": references
@@ -217,6 +262,9 @@ def create_index_html(output_dir, generated_guides, project_dir):
     
     # Read version for display
     version = read_version(project_dir)
+    
+    # Get repository information
+    repo_info = get_repo_info(project_dir)
     
     # Group guides by type for the index page
     guides_by_type = {}
@@ -257,21 +305,105 @@ def create_index_html(output_dir, generated_guides, project_dir):
     <title>AI Developer Guide API</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }}
+        .content-wrapper {{
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 30px;
+        }}
+        .navbar {{
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }}
+        .navbar-brand {{
+            font-weight: 600;
+            font-size: 1.3rem;
+        }}
+        h1 {{
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }}
+        .lead {{
+            color: #6c757d;
+            font-size: 1.1rem;
+        }}
+        .alert-primary {{
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+        }}
+        .table {{
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }}
+        .table thead {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }}
+        .table-striped tbody tr:nth-of-type(odd) {{
+            background-color: rgba(102, 126, 234, 0.05);
+        }}
+        .card {{
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }}
+        .card-header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+        }}
+        code {{
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #667eea;
+        }}
+        .bg-dark code {{
+            background: #2d3748;
+            color: #a0aec0;
+        }}
+        a {{
+            color: #667eea;
+            text-decoration: none;
+        }}
+        a:hover {{
+            color: #764ba2;
+            text-decoration: underline;
+        }}
+        .btn-outline-light:hover {{
+            background: white;
+            color: #667eea;
+        }}
+        h2, h3 {{
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }}
+        .table-info {{
+            background-color: rgba(102, 126, 234, 0.15) !important;
+        }}
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="https://github.com/dwmkerr/ai-developer-guide">
-                AI Developer Guide API
+            <a class="navbar-brand" href="{repo_info['full_url']}">
+                🧠 AI Developer Guide API
             </a>
             <div class="d-flex align-items-center">
                 <span class="navbar-text me-3">
                     Version {version}
                 </span>
-                <a class="btn btn-outline-light btn-sm me-2" href="https://github.com/dwmkerr/ai-developer-guide#readme">
+                <a class="btn btn-outline-light btn-sm me-2" href="{repo_info['full_url']}#readme">
                     <i class="bi bi-file-text"></i> Documentation
                 </a>
-                <a class="btn btn-outline-light btn-sm" href="https://github.com/dwmkerr/ai-developer-guide">
+                <a class="btn btn-outline-light btn-sm" href="{repo_info['full_url']}">
                     <i class="bi bi-github"></i> GitHub
                 </a>
             </div>
@@ -280,7 +412,7 @@ def create_index_html(output_dir, generated_guides, project_dir):
 
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            <div class="col-lg-10 content-wrapper">
                 <h1>AI Developer Guide API</h1>
                 <p class="lead">JSON API providing standards, patterns and principles for effective AI-assisted development. This API is used by the MCP server to connect LLMs to the guide.</p>
                 
@@ -298,7 +430,7 @@ def create_index_html(output_dir, generated_guides, project_dir):
 }}</code></pre>
                     </div>
                     <p class="mt-2 mb-2">
-                        <a href="https://github.com/dwmkerr/ai-developer-guide/tree/main/mcp" class="alert-link">
+                        <a href="{repo_info['full_url']}/tree/main/mcp" class="alert-link">
                             See the MCP documentation for detailed setup instructions (Claude, Cursor, VS Code, etc.) →
                         </a>
                     </p>
@@ -364,6 +496,48 @@ def create_index_html(output_dir, generated_guides, project_dir):
             </div>
         </div>
     </div>
+    
+    <footer class="text-center text-white mt-5 pb-4">
+        <div class="container">
+            <p class="mb-2">
+                <i class="bi bi-github"></i> 
+                <a href="{repo_info['full_url']}" class="text-white text-decoration-none">
+                    View on GitHub
+                </a>
+            </p>
+            <p class="small mb-0">
+                Built with ❤️ for AI-assisted development | Version {version}
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {{
+            anchor.addEventListener('click', function (e) {{
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {{
+                    target.scrollIntoView({{ behavior: 'smooth' }});
+                }}
+            }});
+        }});
+        
+        // Add fade-in animation on load
+        window.addEventListener('load', function() {{
+            document.querySelector('.content-wrapper').style.animation = 'fadeIn 0.5s ease-in';
+        }});
+    </script>
+    
+    <style>
+        @keyframes fadeIn {{
+            from {{ opacity: 0; transform: translateY(20px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
+        }}
+        footer a:hover {{
+            text-decoration: underline !important;
+        }}
+    </style>
 </body>
 </html>"""
 
@@ -393,15 +567,16 @@ def generate_api_index(project_dir, output_dir, generated_guides):
     output_path = os.path.join(output_dir, "api.json")
     
     try:
-        # Read version
+        # Read version and repo info
         version = read_version(project_dir)
+        repo_info = get_repo_info(project_dir)
         
         # Create a simple API index
         api_index = {
             "name": "AI Developer Guide API",
             "description": "JSON API providing standards, patterns and principles for effective AI-assisted development",
             "version": version,
-            "source": "https://github.com/dwmkerr/ai-developer-guide",
+            "source": repo_info['full_url'],
             "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
             "endpoints": {
                 "main_guide": {
