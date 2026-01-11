@@ -17,9 +17,6 @@
   </p>
 </p>
 
-> **Note:** This is a customized fork of [dwmkerr's AI Developer Guide](https://github.com/dwmkerr/ai-developer-guide). 
-> Check out the original for the base version and community contributions.
-
 Point your LLM/agents/editor at this guide and you will get significantly improved results and collaboration when coding:
 
 - Large changes are designed and discussed before being implemented
@@ -48,8 +45,6 @@ Or use the [AI Developer Guide MCP Server](./mcp/ai-developer-guide-mcp/README.m
   }
 }
 ```
-
-> **Note:** You can also use the original MCP server: `@dwmkerr/ai-developer-guide-mcp`
 
 The MCP Server is also available as a [Docker Image](#TODO link to docker guide in mcp readme) and a [Helm Chart](# TODO link to helm chart in mcp readme) which can optionally deploy to [Ark](https://github.com/mckinsey/agents-at-scale-ark).
 

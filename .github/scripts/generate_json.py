@@ -429,10 +429,6 @@ def create_index_html(output_dir, generated_guides, project_dir):
   }}
 }}</code></pre>
                     </div>
-                    <p class="mt-3 mb-2">
-                        <strong>💡 Note:</strong> This is a customized fork of the AI Developer Guide. 
-                        You can also use the original: <code>@dwmkerr/ai-developer-guide-mcp</code>
-                    </p>
                     <p class="mt-2 mb-2">
                         <a href="{repo_info['full_url']}/tree/main/mcp" class="alert-link">
                             See the MCP documentation for detailed setup instructions (Claude, Cursor, VS Code, etc.) →
