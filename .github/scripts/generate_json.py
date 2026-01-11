@@ -429,6 +429,10 @@ def create_index_html(output_dir, generated_guides, project_dir):
   }}
 }}</code></pre>
                     </div>
+                    <p class="mt-3 mb-2">
+                        <strong>💡 Note:</strong> This uses the original MCP server which works with any AI Developer Guide site. 
+                        The server automatically fetches content from this GitHub Pages deployment.
+                    </p>
                     <p class="mt-2 mb-2">
                         <a href="{repo_info['full_url']}/tree/main/mcp" class="alert-link">
                             See the MCP documentation for detailed setup instructions (Claude, Cursor, VS Code, etc.) →
