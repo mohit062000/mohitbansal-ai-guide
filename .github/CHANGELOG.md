@@ -1,5 +1,64 @@
 # Changelog
 
+## [0.1.20](https://github.com/mohit062000/mohitbansal-ai-guide/compare/v0.1.21...v0.1.20) (2026-01-11)
+
+
+### Features
+
+* add Docker support with HTTP/SSE transport ([#50](https://github.com/mohit062000/mohitbansal-ai-guide/issues/50)) ([83bf6f9](https://github.com/mohit062000/mohitbansal-ai-guide/commit/83bf6f941268906dedc8c366da2e8787a21c9edd))
+* add Helm chart for Kubernetes deployment ([#52](https://github.com/mohit062000/mohitbansal-ai-guide/issues/52)) ([45fe8c1](https://github.com/mohit062000/mohitbansal-ai-guide/commit/45fe8c1bcfb018511eee5ed59c55a7ec33eacb0c))
+* add kubernetes development guide and cleanup docs ([#37](https://github.com/mohit062000/mohitbansal-ai-guide/issues/37)) ([0618fb3](https://github.com/mohit062000/mohitbansal-ai-guide/commit/0618fb36cf78794ca536f7a1ee0c0ac5d0a1ae2b))
+* add MCP servers guide ([#44](https://github.com/mohit062000/mohitbansal-ai-guide/issues/44)) ([5c73af0](https://github.com/mohit062000/mohitbansal-ai-guide/commit/5c73af008a50d5d971e18f57f52bb27bd42070d0))
+* **claude:** claude slash commands and docs ([#56](https://github.com/mohit062000/mohitbansal-ai-guide/issues/56)) ([ab120e8](https://github.com/mohit062000/mohitbansal-ai-guide/commit/ab120e89ad1d2abad292f92902d6f58a4e40e156))
+* **cli:** basic CLI guide ([#33](https://github.com/mohit062000/mohitbansal-ai-guide/issues/33)) ([d98142f](https://github.com/mohit062000/mohitbansal-ai-guide/commit/d98142f6749d40666e34d572ef6c3b364947e61d))
+* **docs:** add Claude Code setup instructions ([#39](https://github.com/mohit062000/mohitbansal-ai-guide/issues/39)) ([6c7c1fc](https://github.com/mohit062000/mohitbansal-ai-guide/commit/6c7c1fce69d9af3e890f9cf9a2d4c916dc35d46f))
+* **docs:** contributors integrated ([3b9c865](https://github.com/mohit062000/mohitbansal-ai-guide/commit/3b9c8655b7f967f1ba83cb53c4f15dcdf2e5d817))
+* **docs:** copilot instructions file (thanks [@gerrit-schoettler-qb](https://github.com/gerrit-schoettler-qb)) ([#7](https://github.com/mohit062000/mohitbansal-ai-guide/issues/7)) ([3b9c865](https://github.com/mohit062000/mohitbansal-ai-guide/commit/3b9c8655b7f967f1ba83cb53c4f15dcdf2e5d817))
+* **docs:** do not make assumptions/put in placeholders ([#9](https://github.com/mohit062000/mohitbansal-ai-guide/issues/9)) ([3cf9bd7](https://github.com/mohit062000/mohitbansal-ai-guide/commit/3cf9bd76f4cdfe904549033b74a62257a3fb8ebe))
+* **docs:** improvements to CI/CD running locally ([6a2d04b](https://github.com/mohit062000/mohitbansal-ai-guide/commit/6a2d04ba6149211cd3a9f8cf2df0d815d621c6c7))
+* **docs:** more explicit discuss before implement ([29931fc](https://github.com/mohit062000/mohitbansal-ai-guide/commit/29931fcabe6d72d6853142e043db9b0a90eee955))
+* **docs:** more explicitly scope changes to what has been discussed ([603771d](https://github.com/mohit062000/mohitbansal-ai-guide/commit/603771dfb6b9506bce5273baed6231fa91f5b1ac))
+* **docs:** move contributors.md to docs directory ([fcdd0e5](https://github.com/mohit062000/mohitbansal-ai-guide/commit/fcdd0e56bb614f9fbba02e273f13771a68189ee4))
+* **docs:** python requirements ([#5](https://github.com/mohit062000/mohitbansal-ai-guide/issues/5)) ([e9f6a5a](https://github.com/mohit062000/mohitbansal-ai-guide/commit/e9f6a5addb68dedea319de7c71fac9edfaab3423))
+* **docs:** repo custom instructions for copilot documentation ([7a9a6ee](https://github.com/mohit062000/mohitbansal-ai-guide/commit/7a9a6ee221f6f65547bacd9d6e7880f44b109818))
+* **docs:** simplifed structure - guide on main README ([5de8af0](https://github.com/mohit062000/mohitbansal-ai-guide/commit/5de8af0333f2520ae62e77880afea99b533a5d25))
+* enhance API site with versioning and improved landing page ([#17](https://github.com/mohit062000/mohitbansal-ai-guide/issues/17)) ([2fa90cd](https://github.com/mohit062000/mohitbansal-ai-guide/commit/2fa90cdcc10234dc120f8aafee6ea8ea843a5208))
+* enhance GitHub Pages with dynamic repo detection and modern gradient design ([5d9286b](https://github.com/mohit062000/mohitbansal-ai-guide/commit/5d9286baa936a5498bbabd806f58330f7461cb5f))
+* **implementation:** avoid 'helpful' unexpected changes ([526a377](https://github.com/mohit062000/mohitbansal-ai-guide/commit/526a37712e99bf7ffc214bfaa63790ea6b9d4d6d))
+* mcp ([#13](https://github.com/mohit062000/mohitbansal-ai-guide/issues/13)) ([82b01d2](https://github.com/mohit062000/mohitbansal-ai-guide/commit/82b01d22eea84c9562beeb105f5870570aead22b))
+* **mcp:** 'check' to test config ([#24](https://github.com/mohit062000/mohitbansal-ai-guide/issues/24)) ([f597696](https://github.com/mohit062000/mohitbansal-ai-guide/commit/f597696a010743bcf9d23099066c7d2b27dc4098))
+* **mcp:** ai developer guide mcp server ([#20](https://github.com/mohit062000/mohitbansal-ai-guide/issues/20)) ([e359177](https://github.com/mohit062000/mohitbansal-ai-guide/commit/e359177951b05538188a9f1b1c2daa446b38b9f0))
+* **opensource:** add the 'open source' guide ([#31](https://github.com/mohit062000/mohitbansal-ai-guide/issues/31)) ([b53bb43](https://github.com/mohit062000/mohitbansal-ai-guide/commit/b53bb439d1cf06a3b87225e97047956654945a56))
+* personalize with mohit062000 branding and custom MCP package name ([ca79e4e](https://github.com/mohit062000/mohitbansal-ai-guide/commit/ca79e4e4b22c901e1d1c6dd369cc12fbc0654104))
+* **site:** improvements to site structure and instructions ([d98142f](https://github.com/mohit062000/mohitbansal-ai-guide/commit/d98142f6749d40666e34d572ef6c3b364947e61d))
+
+
+### Bug Fixes
+
+* add MCP server path for Ark v0.1.49 compatibility ([#64](https://github.com/mohit062000/mohitbansal-ai-guide/issues/64)) ([b199594](https://github.com/mohit062000/mohitbansal-ai-guide/commit/b19959456c899b529de3ebabed7e551e03e307a5))
+* build multi-platform Docker images for AMD64 and ARM64 ([4ed036f](https://github.com/mohit062000/mohitbansal-ai-guide/commit/4ed036fec6ea8e8ce6f46f299d1eaa3777ef53b6))
+* **build:** fix mcp server build ([6443a6f](https://github.com/mohit062000/mohitbansal-ai-guide/commit/6443a6fe89d79ab2c111bed4560fdc0452d7f4cf))
+* **build:** skip link check for login-only content ([f116321](https://github.com/mohit062000/mohitbansal-ai-guide/commit/f116321dd7cd8ab41434ab827c5ba3a0ac4a4c6a))
+* configure release-please to stay on 0.1.x patch versions ([b91f126](https://github.com/mohit062000/mohitbansal-ai-guide/commit/b91f1269c4b8a5a2e5570242592e98218ef802e6))
+* deploy GitHub Pages on every push to main branch ([38268d1](https://github.com/mohit062000/mohitbansal-ai-guide/commit/38268d1076c0dd7b336b1f31dd29501b852f4d28))
+* ignore allcontributors.org link check failures ([ba300b3](https://github.com/mohit062000/mohitbansal-ai-guide/commit/ba300b379d980764b7d655c01eaf928053481487))
+* ignore changelog version comparison links that reference unreleased tags ([2532ec5](https://github.com/mohit062000/mohitbansal-ai-guide/commit/2532ec5d1d6e880d9a00319722ec67649bf04bd5))
+* **mcp:** exclude tests from build ([c029a57](https://github.com/mohit062000/mohitbansal-ai-guide/commit/c029a57b6704473887de9816301852051a5cea73))
+* remove duplicate intro paragraph in make guide ([#48](https://github.com/mohit062000/mohitbansal-ai-guide/issues/48)) ([9603b67](https://github.com/mohit062000/mohitbansal-ai-guide/commit/9603b6720b77638e88ff521f74492105a03ef254))
+* remove path from MCPServer serviceRef - Ark appends /mcp automatically ([659733c](https://github.com/mohit062000/mohitbansal-ai-guide/commit/659733c0b4a23e7d0aa445856106410e59e25d71))
+* remove unnecessary attach-assets job ([7b466dc](https://github.com/mohit062000/mohitbansal-ai-guide/commit/7b466dc8454e1e01b70e26e69151ebf095890447))
+* update form-data to 4.0.4 to fix CVE-2025-7783 ([37805bf](https://github.com/mohit062000/mohitbansal-ai-guide/commit/37805bf6effb0e19a0eeedce72cb1242cdc6f0d7))
+
+
+### Miscellaneous Chores
+
+* release 0.0.1 ([9b73ff7](https://github.com/mohit062000/mohitbansal-ai-guide/commit/9b73ff7f054feebeeb86851d9b8fe38020aa5ae0))
+* release 0.1.10 ([0762e89](https://github.com/mohit062000/mohitbansal-ai-guide/commit/0762e897da9aaa2b7ed8fa1507c83357afb6adef))
+* release 0.1.20 ([ad90ac9](https://github.com/mohit062000/mohitbansal-ai-guide/commit/ad90ac96462026037a71e973843263614cbc33d5))
+* release 0.1.4 ([96a645a](https://github.com/mohit062000/mohitbansal-ai-guide/commit/96a645a645efd5009d859e78855b3a460e57842f))
+* release 0.1.8 ([c88961d](https://github.com/mohit062000/mohitbansal-ai-guide/commit/c88961de57d877f8845c1c0fd17b8b511b61b214))
+* release 0.13.2 ([9cac44d](https://github.com/mohit062000/mohitbansal-ai-guide/commit/9cac44dba59afb781bf308054d91b71c141b1bc3))
+
 ## [0.1.21](https://github.com/dwmkerr/ai-developer-guide/compare/v0.1.20...v0.1.21) (2025-12-25)
 
 
